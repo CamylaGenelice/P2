@@ -11,4 +11,14 @@
         <maven.compiler.target>11</maven.compiler.target>
         <exec.mainClass>chatbot.ChatBot</exec.mainClass>
     </properties>
+    <dependencies> 
+        <dependency>
+            <groupId>com.vdurmont</groupId>
+            <artifactId>emoji-java</artifactId>
+            <version>5.1.1</version>
+            <type>jar</type>
+        </dependency>
+
+    </dependencies>
+
 </project>
