@@ -57,7 +57,7 @@ public class Historia {
             System.out.println("|Vaga-lume: Vamos seguir pelo caminho da esquerda. |\n");
         }
         else{
-            System.out.println("Desculpe, não entendi o que você digitou, eu so consigo ler a,b e c. ");
+            System.out.println("Desculpe, não entendi o que você digitou, eu so consigo ler as letras: a,b e c. ");
         }
 
 
