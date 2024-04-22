@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Historia {
 
     public static void condicionais(String x){
-        
+        if (x.equals("a letra o")) {
+            System.out.println("ACERTOU");
+        }
       
         
         
@@ -17,6 +19,7 @@ public class Historia {
         Scanner entradaA = new Scanner(System.in);
         /*Variaveis */
         String caminhoA;
+        String teste;
         /*Metodos */
         exibir_historia();
         
@@ -54,7 +57,9 @@ public class Historia {
             System.out.println("Aurora assentiu, confiando na sabedoria do vaga-lume. Enquanto se aproximavam da ponte, o troll emergiu das sombras, sua figura imponente bloqueando o caminho. Seus olhos brilhavam com curiosidade enquanto observava Aurora e o vaga-lume se aproximarem.");
             System.out.println("|Troll:\u001B[34m Quem ousa atravessar minha ponte? \u001B[0m|\n grunhiu o troll, sua voz profunda ecoando pela noite.\nAurora deu um passo à frente, mantendo-se firme apesar da imponência do troll.");
             System.out.println("|Vaga-lume:\u001B[34m Somos viajantes, estamos indo ver a Senhora da Floresta, por favor nos deixe passar.\u001B[0m|");
-            System.out.println("|Troll: |");
+            System.out.println("|Troll: \u001B[34m Para atravessar minha ponte, o enigma deve resolver.\nO que é, o que é Faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu? |");
+            teste = entradaA.nextLine();
+            condicionais(teste);
 
 
 
