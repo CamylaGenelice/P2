@@ -51,6 +51,13 @@ public class Historia {
             System.out.println("|Aurora: \u001B[34m O que vamos negociar com ele? '\u001B[0m|\n");
             System.out.println("Vaga-lume piscou suas asas, lançando um brilho reconfortante sobre Aurora enquanto eles se aproximavam da ponte guardada pelo troll.");
             System.out.println("|Vaga-lume:\u001B[34m  Não se preocupe, Aurora. Trolls podem parecer assustadores, mas eles são mais amigáveis do que parecem. Eles adoram trocar histórias e enigmas. Acho que podemos oferecer ao troll algo que ele valorize em troca da passagem segura.\u001B[0m|\n");
+            System.out.println("Aurora assentiu, confiando na sabedoria do vaga-lume. Enquanto se aproximavam da ponte, o troll emergiu das sombras, sua figura imponente bloqueando o caminho. Seus olhos brilhavam com curiosidade enquanto observava Aurora e o vaga-lume se aproximarem.");
+            System.out.println("|Troll:\u001B[34m Quem ousa atravessar minha ponte? \u001B[0m|\n grunhiu o troll, sua voz profunda ecoando pela noite.\nAurora deu um passo à frente, mantendo-se firme apesar da imponência do troll.");
+            System.out.println("|Vaga-lume:\u001B[34m Somos viajantes, estamos indo ver a Senhora da Floresta, por favor nos deixe passar.\u001B[0m|");
+            System.out.println("|Troll: |");
+
+
+
         }
         else if(caminhoA.equals("b")){
             System.out.println("|Vaga-lume: \u001B[34m Vamos seguir reto. \u001B[0m|\n");
