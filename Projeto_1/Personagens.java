@@ -1,15 +1,22 @@
 public class Personagens {
+    
     int energiaVagalume;
     int vidaAurora;
     int dano_DaEspada_Aurora;
     int vidaGargola;
+    int dano_Do_Goeln;
     int vidaGolen;
     
+    int pocaoAzul;
+    int pocaoVermelha;
 
     public Personagens(){
-        energiaVagalume = 50;
-        vidaAurora = 100;
-        dano_DaEspada_Aurora = 35;
+        energiaVagalume = 16;
+        vidaAurora = 14;
+        dano_DaEspada_Aurora = 5;
+        vidaGolen = 10;
+        dano_Do_Goeln = 2;
+        pocaoAzul = 7;
     }
    public void vagalumeFeixeDeLuz(){
     System.out.println(energiaVagalume);
@@ -18,5 +25,7 @@ public class Personagens {
     System.out.println(vidaAurora);
     System.out.println(dano_DaEspada_Aurora);
    }
-
+   public void ataquedoGolen(){
+        dano_Do_Goeln = 2;
+   }
 }

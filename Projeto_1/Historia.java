@@ -10,6 +10,16 @@
 import java.util.Scanner;
 public class Historia {
 
+    public static void Inicio_da_Batalha(){
+        Personagens habilidadesVagalume = new Personagens();
+        Personagens habilidadesDeAurora = new Personagens();
+        Personagens habilidadesGolen = new Personagens();
+        int hpAurora = habilidadesDeAurora.vidaAurora;
+        int hpVagalume = habilidadesVagalume.energiaVagalume;
+        System.out.println("HP AURORA: "+hpAurora+"\nENERGIA DO VAGA-LUME: "+hpVagalume);
+
+
+    }
     public static void condicionais(String x){
        int contador = 0;
        Scanner ler = new Scanner(System.in);
@@ -105,9 +115,9 @@ public class Historia {
             System.out.println("|Vaga-lume:\u001B[34m  Vamos parar aqui para descansar e comer um pouco. \u001B[0m|\n");
             System.out.println("|Aurora: \u001B[34m O que eu posso comer nesse horrivel pesadelo? Não vejo nada que poderia me alimentar. '\u001B[0m|\n");
             System.out.println("|Vaga-lume:\u001B[34m  Eu irei pegar um pouco de sonhos para que você possa comer. \u001B[0m|\n");
-            System.out.println(" Quando o jovem vaga-lume se preparava para buscar comida para a garota algo horrivel surge das sombras da floresta, um Golen. ");
-            vagalume.vagalumeFeixeDeLuz();
-
+            System.out.println(" Quando o jovem vaga-lume se preparava para buscar comida para a garota algo horrivel surge das sombras da floresta, um Golen.\n ");
+            
+            Inicio_da_Batalha();
 
         }
         else if(caminhoA.equals("b")){
