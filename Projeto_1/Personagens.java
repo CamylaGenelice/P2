@@ -1,14 +1,22 @@
 public class Personagens {
     int energiaVagalume;
     int vidaAurora;
+    int dano_DaEspada_Aurora;
+    int vidaGargola;
+    int vidaGolen;
+    
 
     public Personagens(){
         energiaVagalume = 50;
         vidaAurora = 100;
+        dano_DaEspada_Aurora = 35;
     }
-    public static void main(String[] args) {
-        System.out.println("\u001B[34m esse texto é azul \u001B[0m");
-       
-        System.out.println("|Vaga-lume:\u001B[34m  Hum...A porta está fechada, mas eu sei onde está a chave.\nAquele tronco tem um buraco no meio, é onde a chave está.\u001B[0m|\n");
-    }
+   public void vagalumeFeixeDeLuz(){
+    System.out.println(energiaVagalume);
+   }
+   public void abi_Dano_Espada(){
+    System.out.println(vidaAurora);
+    System.out.println(dano_DaEspada_Aurora);
+   }
+
 }
