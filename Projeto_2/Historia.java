@@ -1,19 +1,20 @@
-/**
- * if (x.equals("a letra o","O","A letra 0")) {
-                System.out.println("ACERTOU");}
-            else{
-                System.out.println("Desculpe não entendi o que você digitou");
-            }
+/*
       
  * A classe Historia é onde vai rodar a história do jogo. 
  */
 import java.util.Scanner;
+import java.util.Random;
 public class Historia {
 
-    public static void Inicio_da_Batalha(){
+    public static void lancarDado(String x){
+        Random dado = new Random();
+        int jogarDado = dado.nextInt(7) +1;
+        System.out.println("Você tirou o número: "+jogarDado);
+    }
+    public static void Inicio_da_Batalha(){ /*MÉTODO QUE VAI EXIBIR A VIDA DOS PERSONAGENS */
         Personagens habilidadesVagalume = new Personagens();
         Personagens habilidadesDeAurora = new Personagens();
-        Personagens habilidadesGolen = new Personagens();
+        
         int hpAurora = habilidadesDeAurora.vidaAurora;
         int hpVagalume = habilidadesVagalume.energiaVagalume;
         System.out.println("HP AURORA: "+hpAurora+"\nENERGIA DO VAGA-LUME: "+hpVagalume);
@@ -54,11 +55,12 @@ public class Historia {
     }
     public static void main(String[] args) {
         Scanner entradaA = new Scanner(System.in);
-        Personagens vagalume = new Personagens();
-        Personagens habilidadesDeAurora = new Personagens();
+        /*Personagens vagalume = new Personagens();
+        Personagens habilidadesDeAurora = new Personagens();*/
         /*Variaveis */
         String caminhoA;
         String teste;
+        String jogarDado;
         /*Metodos */
         exibir_historia();
         
@@ -118,6 +120,10 @@ public class Historia {
             System.out.println(" Quando o jovem vaga-lume se preparava para buscar comida para a garota algo horrivel surge das sombras da floresta, um Golen.\n ");
             
             Inicio_da_Batalha();
+            System.out.println("Para você realizar uma ação você precisara jogar o dado.\nDIGITE OK");
+            jogarDado = entradaA.nextLine();
+            lancarDado(jogarDado);
+           /*  habilidadesDeAurora.Dano_Espada();*/
 
         }
         else if(caminhoA.equals("b")){
