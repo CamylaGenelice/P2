@@ -8,8 +8,16 @@ public class Historia {
 
     public static void lancarDado(String x){
         Random dado = new Random();
+        Personagens objeto = new Personagens();
+        int resposta;
         int jogarDado = dado.nextInt(7) +1;
         System.out.println("Você tirou o número: "+jogarDado);
+        System.out.println("Com base ao número que você tirou escolha qual ação você deseja realizar:\n|3 Atacar 4 Usar Habilidade 3 Defender 2 Usar Item |\nDigite o número da ação: ");
+        resposta = dado.nextInt();
+        if (resposta == 3){
+            objeto.funcao_Dano_Espada();
+        }
+
     }
     public static void Inicio_da_Batalha(){ /*MÉTODO QUE VAI EXIBIR A VIDA DOS PERSONAGENS */
         Personagens habilidadesVagalume = new Personagens();
