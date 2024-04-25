@@ -6,58 +6,24 @@ import java.util.Scanner;
 import java.util.Random;
 public class Historia {
 
-    public static void lancarDado(String x){
-        Random dado = new Random();
-        Personagens objeto = new Personagens();
-        int resposta;
-        int jogarDado = dado.nextInt(7) +1;
-        System.out.println("Você tirou o número: "+jogarDado);
-        System.out.println("Com base ao número que você tirou escolha qual ação você deseja realizar:\n|3 Atacar 4 Usar Habilidade 3 Defender 2 Usar Item |\nDigite o número da ação: ");
-        resposta = dado.nextInt();
-        if (resposta == 3){
-            objeto.funcao_Dano_Espada();
-        }
+    
 
-    }
+    
     public static void Inicio_da_Batalha(){ /*MÉTODO QUE VAI EXIBIR A VIDA DOS PERSONAGENS */
         Personagens habilidadesVagalume = new Personagens();
         Personagens habilidadesDeAurora = new Personagens();
         
-        int hpAurora = habilidadesDeAurora.vidaAurora;
+        int hpAurora = habilidadesDeAurora.vidaMaxAurora;
         int hpVagalume = habilidadesVagalume.energiaVagalume;
         System.out.println("HP AURORA: "+hpAurora+"\nENERGIA DO VAGA-LUME: "+hpVagalume);
 
 
     }
-    public static void condicionais(String x){
-       int contador = 0;
-       Scanner ler = new Scanner(System.in);
-        while (contador != 2) {
-            if (x.equals("a letra o")) {
-                System.out.println("PARABENS VOCE ACERTOU");
-                contador +=2;
-                break;
-            }
-            else{
-                try {
-                    
-                    System.out.println("Você tem "+contador+" tentativas para responde");
-                    System.out.println("O que é, o que é Faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu?");
-                    String resposta = ler.nextLine();
-                    if (resposta.equals("a letra o")) {
-                        System.out.println("Resposta Certa");
-                    }
-                    contador +=1;
-                    
-                } catch (NumberFormatException e) {
-                    // TODO: handle exception
-                    System.out.println("Tentativa invalida");
-                }
-            }
-        }    
+    
+      
         
         
-    }
+    
     public static void exibir_historia(){
         System.out.println("\nEra uma vez um reino chamado Lemúria, que era governado pelo rei Augusto que se casou com uma duquesa desconhecida e juntos tiveram Aurora. Meses depois a duquesa veio a falecer.\nAugusto teve que criar sozinho a sua filha. Os dois sempre vivendo em união, até o rei se sentir solitário e perder o rumo do seu coraçaõ, se cansando novamente.\nEm 1895, véspera da páscoa, quando Aurora adormeceu o fogo do seu coração se desfez e então seu corpo foi tomado pelo frio, e sua pele fria como a neve se fez.\nNa manhã eles a encontraram Aurora vazia perdera sua luz clara.\nSeu pai chorava e suplicava, não havia dúvidas que sua hora chegara.\nNão havia como negar, Auora morta estava.\nAinda assim como num conto de fadas, em uma terra estranha Aurora acordava.\n |Sua missão é ajudar Aurora a descobrir onde ela estar e como voltar para casa.|\n ");
     }
