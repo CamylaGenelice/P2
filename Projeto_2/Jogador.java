@@ -2,17 +2,64 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Jogador {
+   
     public static void lancarDado(String x){
+        Scanner ler_entrada = new Scanner(System.in);
         Random dado = new Random();
         Personagens objeto = new Personagens();
         int resposta;
-        int jogarDado = dado.nextInt(7) +1;
-        System.out.println("Você tirou o número: "+jogarDado);
-        System.out.println("Com base ao número que você tirou escolha qual ação você deseja realizar:\n|3 Atacar 4 Usar Habilidade 3 Defender 2 Usar Item |\nDigite o número da ação: ");
-        resposta = dado.nextInt();
-        if (resposta == 3){
-            objeto.funcao_AtaqueBasico(); 
+        int vidaAtual_Aurora = 14;
+        int vidaAtualGolen = 10;
+
+        
+        while (vidaAtual_Aurora !=2 && vidaAtualGolen != 0) {
+            int jogarDado = dado.nextInt(6) +1;
+            System.out.println("Você tirou o número: "+jogarDado);
+            System.out.println("Com base ao número que você tirou escolha qual ação você deseja realizar:\n|3 Atacar 4 Usar Habilidade 3 Defender 2 Usar Item |\nDigite o número da ação: ");
+            resposta = ler_entrada.nextInt();
+            if (resposta == jogarDado && resposta == 3){
+               
+                System.out.println("Escolha uma das ações:\n|1 Atacar|\n|2 Defender|");
+                int escolha = ler_entrada.nextInt();
+                if (escolha == 1) {
+                    objeto.funcao_AtaqueBasico();
+                    vidaAtualGolen -= 5;
+                    System.out.print(" Vida do Golen:\n "+vidaAtualGolen);
+                }
+                else if (escolha == 2) {
+                    objeto.funcao_Defender();
+                    vidaAtual_Aurora -=1;
+                    System.out.println("\\u001B[41mSua vida atual:\\u001B[0m "+vidaAtual_Aurora);
+                }
+
         }
+            else if (resposta == jogarDado && resposta == 4) {
+                objeto.funcao_Habilidade_Especial();
+                vidaAtualGolen -=6;
+                System.out.print(" Vida do Golen: "+vidaAtualGolen);
+            }
+            
+            else if (resposta == jogarDado && resposta == 2 ) {
+                System.out.println("Escolha qual poção você vai utilizar:\n|1 Poção Azul||2 Poção Vermelha|");
+                int resposta_da_pocao = ler_entrada.nextInt();
+                objeto.funcao_UsarItem(resposta_da_pocao);
+            }
+            else{
+                objeto.funcao_ataquedoGolen();
+                vidaAtual_Aurora -=2;
+                System.out.println("Vida atual: "+vidaAtual_Aurora);
+                
+                if (vidaAtual_Aurora <= 4) {
+                    System.out.println("Você está com pouca vida, cuidado!");
+                }
+                
+            }
+            
+         
+        
+        }
+        ler_entrada.close();
+        
 }
 
 
@@ -27,25 +74,25 @@ public class Jogador {
                 break;
             }
             else{
-                try {
-                    
-                    System.out.println("Você tem "+contador+" tentativas para responde");
-                    System.out.println("O que é, o que é Faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu?");
+               
+                    System.out.println("O que é, o que é, faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu?");
                     String resposta = ler.nextLine();
                     if (resposta.equals("a letra o")) {
                         System.out.println("Resposta Certa");
+                        break;
                     }
                     contador +=1;
                     
-                } catch (NumberFormatException e) {
-                    // TODO: handle exception
-                    System.out.println("Tentativa invalida");
-                }
+               
+                
             }
         }  
+        
 }
 
-
+public static void main(String[] args) {
+    lancarDado("oka");
+}
 
 
 }

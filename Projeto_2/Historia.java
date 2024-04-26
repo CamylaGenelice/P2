@@ -96,7 +96,7 @@ public class Historia {
             Inicio_da_Batalha();
             System.out.println("Para você realizar uma ação você precisara jogar o dado.\nDIGITE OK");
             jogarDado = entradaA.nextLine();
-            lancarDado(jogarDado);
+            
            /*  habilidadesDeAurora.Dano_Espada();*/
 
         }
