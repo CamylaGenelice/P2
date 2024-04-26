@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Personagens {
     /*Atriubutos */
     int energiaVagalume;
@@ -46,38 +48,40 @@ public class Personagens {
    }
 
    public void funcao_Habilidade_Especial(){
-     int subtrair = vidaGolen - (ataqueBasico + 1);
+     int ataqueEspecial = ataqueBasico + 1;
+     int subtrair = vidaGolen - ataqueEspecial;
      vidaAtualGolen = subtrair;
-        System.out.println("\u001B[41m ATAQUE COM REALIZADO COM SUCESSO\n \u001B[0m"+ataqueBasico+1);
+        System.out.println("\u001B[41m ATAQUE COM REALIZADO COM SUCESSO: \u001B[0m"+ataqueEspecial);
    }
    public void funcao_BeberPocaoAzul(int vidaAtual){
-     if (vidaAtual < vidaMinAurora){
+     if (vidaAtual <= vidaMinAurora){
           int beber = vidaAtual + pocaoAzul;
           vidaAtual = beber;
-          System.out.println(vidaAtual);
+          System.out.println("Sua vida atual: "+vidaAtual);
 
      }
      else{
           System.out.println("Impossivel beber a poção, sua vida não esta no límite.");
      }
 }
-     public void funcao_BeberPocaoVermelha(int vidaAtual){
-          if (vidaAtual < vidaMinAurora){
-               int beber = vidaAtual + pocaoVermelha;
-               vidaAtual = beber;
-               System.out.println(vidaAtual);
+     public  void funcao_BeberPocaoVermelha(int vidaAtual){
+          if (vidaAtual >= vidaMinAurora && vidaAtual < vidaMaxAurora){
+               int subtrair = vidaMaxAurora - vidaAtual;
+               int somar_para_complementar = vidaAtual + subtrair;
+               System.out.println("Sua vida foi restaurada com sucesso "+somar_para_complementar);
           }
           else{
                System.out.println("Algo deu errado, ops ;$");
           }
      }
-     public int funcao_UsarItem(int escolha){
+     
+     public int funcao_UsarItem(int escolha, int vidaAtual){
      try {
           if (escolha == 1){
-               funcao_BeberPocaoAzul(vidaAtual_Aurora);
+               funcao_BeberPocaoAzul(vidaAtual);
           }
           else if (escolha == 2) {
-               funcao_BeberPocaoVermelha(vidaAtual_Aurora);
+               funcao_BeberPocaoVermelha(vidaAtual);
                
           }
           else{
@@ -89,5 +93,6 @@ public class Personagens {
           
      }
      return escolha;}
+     
 }
 

@@ -29,11 +29,11 @@ public class Historia {
     }
     public static void main(String[] args) {
         Scanner entradaA = new Scanner(System.in);
-        /*Personagens vagalume = new Personagens();
-        Personagens habilidadesDeAurora = new Personagens();*/
+        Jogador obJogador = new Jogador();
+        
         /*Variaveis */
         String caminhoA;
-        String teste;
+        String resposta_do_usuario;
         String jogarDado;
         /*Metodos */
         exibir_historia();
@@ -70,7 +70,7 @@ public class Historia {
         System.out.println("|Aurora: \u001B[34m E agora para onde vamos?\u001B[0m|\n");
         System.out.println("|Caminho A|\n|Caminho B|\n|Caminho C|");
         caminhoA = entradaA.nextLine();
-
+    
          /* Instruções condicionais com o metodo de comparação */
 
         if (caminhoA.equals("a")) {
@@ -83,9 +83,11 @@ public class Historia {
             System.out.println("Aurora assentiu, confiando na sabedoria do vaga-lume. Enquanto se aproximavam da ponte, o troll emergiu das sombras, sua figura imponente bloqueando o caminho. Seus olhos brilhavam com curiosidade enquanto observava Aurora e o vaga-lume se aproximarem.");
             System.out.println("|Troll:\u001B[34m Quem ousa atravessar minha ponte? \u001B[0m|\n grunhiu o troll, sua voz profunda ecoando pela noite.\nAurora deu um passo à frente, mantendo-se firme apesar da imponência do troll.");
             System.out.println("|Vaga-lume:\u001B[34m Somos viajantes, estamos indo ver a Senhora da Floresta, por favor nos deixe passar.\u001B[0m|");
-            System.out.println("|Troll: \u001B[34m Para atravessar minha ponte, o enigma deve resolver.\nO que é, o que é Faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu? |");
-            teste = entradaA.nextLine();
-            condicionais(teste);
+            System.out.println("|Troll: \u001B[34m Para atravessar minha ponte, o enigma deve resolver.\nO que é, o que é Faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu? \u001B[0m| |");
+            
+            resposta_do_usuario = entradaA.nextLine();
+            obJogador.condicionais(resposta_do_usuario);
+
             System.out.println("Cuidado existem muitas criaturas malignas dentro da floresta");
             System.out.println("O Vaga-lume e Aurora atravessaram a ponte do Trolll.\nE continuaram sua jornada ao encontro da senhora da floresta.");
             System.out.println("|Vaga-lume:\u001B[34m  Vamos parar aqui para descansar e comer um pouco. \u001B[0m|\n");
@@ -96,6 +98,7 @@ public class Historia {
             Inicio_da_Batalha();
             System.out.println("Para você realizar uma ação você precisara jogar o dado.\nDIGITE OK");
             jogarDado = entradaA.nextLine();
+            obJogador.lancarDado(jogarDado);
             
            /*  habilidadesDeAurora.Dano_Espada();*/
 
