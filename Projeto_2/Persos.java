@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Personagens {
+public class Persos {
     /*Atriubutos */
     int energiaVagalume;
     int vidaMaxAurora;
@@ -15,7 +15,7 @@ public class Personagens {
     int pocaoAzul;
     int pocaoVermelha;
 
-    public Personagens(){
+    public Persos(){
         energiaVagalume = 7;
         vidaMaxAurora = 14;
         vidaMinAurora = 7;

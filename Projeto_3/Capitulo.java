@@ -1,20 +1,66 @@
+
 import java.util.Scanner;
 
 public class Capitulo {
+   
+    Scanner entrada = new Scanner(System.in);
+    /*Atributos */
     String nomeCapitulo;
     String escolha1;
     String escolha2;
     String escolha3;
+    int incrementoPersonagem;
     int alteracaoEnergia;
 
+    /*Construtor */
+    Capitulo(String nomeCapitulo, String escolha1, String escolha2, int incrementoPersonagem){
+        this.nomeCapitulo = nomeCapitulo;
+        this.escolha1 = escolha1;
+        this.escolha2 = escolha2;
+
+    } 
+
+    /*Funções  */
     public void funcaoExibir_Introducao(){
         System.out.println("\nEra uma vez um reino chamado Lemúria, que era governado pelo rei Augusto que se casou com uma duquesa desconhecida e juntos tiveram Aurora. Meses depois a duquesa veio a falecer.\nAugusto teve que criar sozinho a sua filha. Os dois sempre vivendo em união, até o rei se sentir solitário e perder o rumo do seu coraçaõ, se cansando novamente.\nEm 1895, véspera da páscoa, quando Aurora adormeceu o fogo do seu coração se desfez e então seu corpo foi tomado pelo frio, e sua pele fria como a neve se fez.\nNa manhã eles a encontraram Aurora vazia perdera sua luz clara.\nSeu pai chorava e suplicava, não havia dúvidas que sua hora chegara.\nNão havia como negar, Auora morta estava.\nAinda assim como num conto de fadas, em uma terra estranha Aurora acordava.\n |Sua missão é ajudar Aurora a descobrir onde ela estar e como voltar para casa.|\n ");
     }
+    
+    public void mostrarNomeDoCapitulo_Escolhas(){
+        Personagens obj = new Personagens();
+        System.out.println(nomeCapitulo);
+        System.out.println(escolha1);
+        System.out.println(escolha2);
+        System.out.println(escolha3);
+        obj.funcao_AtualizarEnergia(incrementoPersonagem);
 
+
+    }
+
+    public funcaoEscolhas(int resposta){
+        
+        if (resposta == 1){
+            funcaoCaminho_A();
+        }
+        else if( resposta == 2){
+            funcaoCaminho_B();
+        }
+        else if (resposta == 3) {
+            funcaoCaminho_B();
+        }
+        else{
+            while (resposta != 1 && resposta != 2 && resposta != 3) {
+                System.out.println("Por favor digite um número válido: ");
+                entrada.nextInt();
+                break;
+            }
+        }
+    }
     public void funcao_ExibirCapitulo1(){
+        
         Scanner entrada = new Scanner(System.in);
         nomeCapitulo = "\n|Cap.1 A GAROTA E O VAGALUME |\n";
         funcaoExibir_Introducao();
+        
         System.out.println(nomeCapitulo);
         funcaoExibirHP();
         System.out.println("\nAurora, acorda sozinha em um lugar totalmente estranho, no meio das árvores.\nEla se levanta lentamente, sentindo-se desorientada e confusa. Ao redor dela, o silêncio da floresta é interrompido apenas pelo suave sussurro do vento.\nEla a vista uma placa e decide olhar.\n  ");
@@ -59,15 +105,11 @@ public class Capitulo {
 
 
     }
-    public void funcao_VoltarCapitulo(){
-        Scanner objEscolhas = new Scanner(System.in);
-        System.out.println("Escolha qual ponto da historia você quer retornar: ");
-
-    }
 
     public void funcaoCaminho_A(){
             Scanner objResposta = new Scanner(System.in);
             Jogador objJogador = new Jogador();
+
             System.out.println("|Vaga-lume:\u001B[34m  Vamos seguir pelo caminho da direita. \u001B[0m|\n");
             System.out.println("Aurora e o Vaga-lume seguiram caminho, pela trilha estreita que serpenteava pela densa floresta. ");
             System.out.println("|Vaga-lume: \u001B[34m Mais a frente tem uma ponte que é protegida por um troll. Vamos ter que negociar com ele para atravessar.\u001B[0m |\n");
@@ -90,8 +132,9 @@ public class Capitulo {
             System.out.println(" Quando o jovem vaga-lume se preparava para buscar comida para a garota algo horrivel surge das sombras da floresta, um Golen.\n ");
             funcaoExibirHP();
             System.out.println("Para você realizar uma ação você precisara jogar o dado.\nDIGITE OK");
+           
             String ok = objResposta.nextLine();
-            objJogador.lancarDado(ok);
+            objJogador.batalhaComOGolen(ok);
 
     }
 

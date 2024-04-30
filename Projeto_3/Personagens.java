@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+/* Classe que contém os metedos e os atributos dos personagens. Os metodos são as ações que cada personagem realiza na hora da batalha.  */
 public class Personagens {
     /*Atriubutos */
     int energiaVagalume;
@@ -93,6 +93,9 @@ public class Personagens {
           
      }
      return escolha;}
-     
-}
+     public void funcao_AtualizarEnergia(int vidaAtual){
+          System.out.println(vidaAtual);
+          }
+     }
+
 

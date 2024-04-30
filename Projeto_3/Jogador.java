@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*classe jogador so tem um metodo. O metodo que faz a parte da ação do game  */
 public class Jogador {
    
-    public static void lancarDado(String x){
+    public static void batalhaComOGolen(String x){
         Scanner ler_entrada = new Scanner(System.in);
         Random dado = new Random();
         Personagens objeto = new Personagens();

@@ -6,7 +6,7 @@ public class Jogador {
     public static void lancarDado(String x){
         Scanner ler_entrada = new Scanner(System.in);
         Random dado = new Random();
-        Personagens objeto = new Personagens();
+        Persos objeto = new Persos();
         int resposta;
         int vidaAtual_Aurora = 14;
         int vidaAtualGolen = 10;
