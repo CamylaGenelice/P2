@@ -11,21 +11,37 @@ public class Personagens {
     int dano_Do_Golen;
     int vidaGolen;
     int vidaAtualGolen;
-    
+    String monstro;
     int pocaoAzul;
     int pocaoVermelha;
 
     public Personagens(){
-        energiaVagalume = 7;
-        vidaMaxAurora = 14;
-        vidaMinAurora = 7;
-        vidaAtual_Aurora = 1;
-        ataqueBasico = 5;
-        vidaGolen = 10;
-        vidaAtualGolen = 1;
-        dano_Do_Golen = 2;
-        pocaoAzul = 7;
+     /*Construtor Padrão */
     }
+    public Personagens(int energiaVagalume,
+    int vidaMaxAurora,
+    int vidaMinAurora,
+    int vidaAtual_Aurora,
+    int ataqueBasico,
+    int vidaGargola,
+    int dano_Do_Golen,
+    int vidaGolen,
+    int vidaAtualGolen,
+    int pocaoAzul,
+    int pocaoVermelha)
+    {
+
+        this.energiaVagalume = 7;
+        this.vidaMaxAurora = 14;
+        this.vidaMinAurora = 7;
+        this.vidaAtual_Aurora = 1;
+        this.ataqueBasico = 5;
+        this.vidaGolen = 10;
+        this.vidaAtualGolen = 1;
+        this.dano_Do_Golen = 2;
+        this.pocaoAzul = 7;
+    }
+    
    
    public void funcao_AtaqueBasico(){
         int subtrair = vidaGolen - ataqueBasico;

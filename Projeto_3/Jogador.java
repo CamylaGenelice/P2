@@ -6,10 +6,10 @@ public class Jogador {
     public static void batalhaComOGolen(String x){
         Scanner ler_entrada = new Scanner(System.in);
         Random dado = new Random();
-        Personagens objeto = new Personagens();
+        Personagens objeto = new Personagens(7,14,4,14,5,0,2,10,10,7,0);
         int resposta;
-        int vidaAtual_Aurora = 14;
-        int vidaAtualGolen = 10;
+        int vidaAtual_Aurora = objeto.vidaMaxAurora;
+        int vidaAtualGolen = objeto.vidaGolen;
 
         
         while (vidaAtual_Aurora !=0 && vidaAtualGolen != 0) {
@@ -87,19 +87,87 @@ public class Jogador {
                 break;
             }
             else{
-               
-                    System.out.println("O que é, o que é, faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu?");
-                    String resposta = ler.nextLine();
-                    if (resposta.equals("a letra o")) {
-                        System.out.println("Resposta Certa");
-                        break;
-                    }
-                    contador +=1;
+                System.out.println("O que é, o que é, faço parte de tudo e estou no final do espaço e do tempo. Quem sou eu?");
+                String resposta = ler.nextLine();
+                if (resposta.equals("a letra o")) {
+                    System.out.println("Resposta Certa");
+                    break;}
+                contador +=1;}
+        }   
+}   
                     
                
                 
+            
+         
+    
+    public static void batalhaComODuende(String x){
+            Scanner ler_entrada = new Scanner(System.in);
+            Random dado = new Random();
+            Personagens objeto = new Personagens(7,14,4,14,5,0,5,10,10,7,0);
+            int resposta;
+            int vidaAurora = objeto.vidaMaxAurora;
+            int vidaDuende = objeto.vidaGolen;
+            
+            while (vidaAurora !=0 && vidaDuende!= 0) {
+                int jogarDado = dado.nextInt(6) +1;
+                System.out.println("\n\u001B[32mVocê tirou o número: \u001B[0m"+jogarDado);
+                System.out.println("Com base ao número que você tirou escolha qual ação você deseja realizar:\n|3 Atacar| |4 Usar Habilidade| |3 Defender| |2 Usar Item| DIGITE ZERO PARA NENHUMA OPÇÃO A CIMA|\nDigite o número da ação: ");
+                resposta = ler_entrada.nextInt();
+               /*JOGADOR ESCOLHE QUAL AÇÃO VAI REALIZAR, SE VAI ATACAR OU DEFENDER */
+                if (resposta == jogarDado && resposta == 3){
+                    System.out.println("Escolha uma das ações:\n|1 Atacar|\n|2 Defender|");
+                    int escolha = ler_entrada.nextInt();
+                    if (escolha == 1) {
+                        objeto.funcao_AtaqueBasico();
+                        vidaDuende -= 5;
+                        System.out.println(" Vida do Duende: "+vidaDuende);
+                        if (vidaDuende <= 0) {
+                            System.out.println("\u001B[46mVOCÊ DERROTOU O DUENDE!!\u001B[0m");
+                            break;
+                        }
+                    }
+                    else if (escolha == 2) {
+                        objeto.funcao_Defender();
+                        vidaAurora -=1;
+                        System.out.println("\u001B[41mSua vida atual:\u001B[0m "+vidaAurora);
+                    }
+    
             }
-        }  
+                else if (resposta == jogarDado && resposta == 4) {
+                    objeto.funcao_Habilidade_Especial();
+                    vidaDuende -=6;
+                    System.out.println(" Vida do Duende: "+vidaDuende);
+                    if (vidaDuende <= 0) {
+                        System.out.println("\n\u001B[46mVOCÊ DERROTOU O DUENDE!\u001B[0m");
+                        break;
+                    }
+                }
+                
+                else if (resposta == jogarDado && resposta == 2 ) {
+                    System.out.println("Escolha qual poção você vai utilizar:\n|1 Poção Azul||2 Poção Vermelha|");
+                    int resposta_da_pocao = ler_entrada.nextInt();
+                    objeto.funcao_UsarItem(resposta_da_pocao,vidaAurora);
+                }
+                else{
+                    objeto.funcao_ataquedoGolen();
+                    vidaAurora -=5;
+                    System.out.println("\u001B[41mVocê recebeu 2 de dano \u001B[0m");
+                    System.out.println("Vida atual: "+vidaAurora);
+                    
+                    if (vidaAurora <= 4 && vidaAurora > 2) {
+                        System.out.println("\u001B Você está com pouca vida, cuidado!\u001B[0m");
+                        
+                    }
+                    if (vidaAurora == 0){
+                        System.out.println("\u001B[33mGAMER OVER\u001B[0m");
+                    }
+                    
+                }
+                
+                ler_entrada.close();
+            
+            }
         
 }
 
