@@ -9,6 +9,7 @@ public class Capitulo {
     String texto1;
     String texto2;
     String texto3;
+    String texto4;
     String escolha1;
     String escolha2;
     String escolha3;
@@ -19,32 +20,22 @@ public class Capitulo {
     public Capitulo(){
         /*CONTRUTOR PADRÃO QUE NÃO RECEBE NADA */
     }
-    public Capitulo(String nomeCapitulo,String texto1, String texto2,String texto3,String escolha1, String escolha2, String escolha3){
+    public Capitulo(String nomeCapitulo,String texto1, String texto2,String texto3,String texto4,String escolha1, String escolha2, String escolha3){
         this.nomeCapitulo = nomeCapitulo;
         this.texto1 = texto1;
         this.texto2 = texto2;
         this.texto3 = texto3;
+        this.texto4 = texto4;
         this.escolha1 = escolha1;
         this.escolha2 = escolha2;
         this.escolha3 = escolha3;
 
     } 
-    public void mostrar(){
-        escolha1 = "Correr";
-        escolha2 = "pular";
-        escolha3 = "lutar";
-        System.out.println("Parametros do construtor: ");
-        System.out.println(""+escolha1);
-        System.out.println(""+escolha2);
-        System.out.println(""+escolha3);
-    }
     /*Funções  */
     public void funcaoExibir_Introducao(){
         System.out.println("\nEra uma vez um reino chamado Lemúria, que era governado pelo rei Augusto que se casou com uma duquesa desconhecida e juntos tiveram Aurora. Meses depois a duquesa veio a falecer.\nAugusto teve que criar sozinho a sua filha. Os dois sempre vivendo em união, até o rei se sentir solitário e perder o rumo do seu coraçaõ, se cansando novamente.\nEm 1895, véspera da páscoa, quando Aurora adormeceu o fogo do seu coração se desfez e então seu corpo foi tomado pelo frio, e sua pele fria como a neve se fez.\nNa manhã eles a encontraram Aurora vazia perdera sua luz clara.\nSeu pai chorava e suplicava, não havia dúvidas que sua hora chegara.\nNão havia como negar, Auora morta estava.\nAinda assim como num conto de fadas, em uma terra estranha Aurora acordava.\n |Sua missão é ajudar Aurora a descobrir onde ela estar e como voltar para casa.|\n ");
     }
 
-
-    
     public int funcao_Escolher(){
         Scanner entrada = new Scanner(System.in);
         int resultado = 0;
@@ -65,82 +56,53 @@ public class Capitulo {
                 escolhaValida = false;
             }
         } return resultado;
+        
+       
+        }
 
-    }
-
-    public void funcaoEscolhasDoCapitulo1(int resposta){
-        while(resposta != 1 && resposta != 2 && resposta != 3){
-            System.out.println("Por favor digite um número válido: ");
-            resposta = entrada.nextInt();
-        }
-        if (resposta == 1){
-            funcaoCaminho_A();
-        }
-        else if( resposta == 2){
-            funcaoCaminho_B();
-        }
-        else if (resposta == 3) {
-            funcaoCaminho_B();
-        }
-        }
-        public void funcao_ExibirCapitulo1(){
+    
+    public void funcao_ExibirCapitulo1(){
             Scanner entradaScanner = new Scanner(System.in);
-            Capitulo objeto = new Capitulo("Cap.1 A GAROTA E VAGA-LUME","\nAurora, acorda sozinha em um lugar totalmente estranho, no meio das árvores.\nEla se levanta lentamente, sentindo-se desorientada e confusa. Ao redor dela, o silêncio da floresta é interrompido apenas pelo suave sussurro do vento.\nEla a vista uma placa e decide olhar.","\n|A direita o velho monastério --> |\nAperte Enter para continuar.","Aurora segue caminho pela floresta. A paisagem do lugar não era agradevel, tinham muitas árvores secas e troncos caidos. Aurora sentia que estava sendo observada", "\n|Caminho 1|", "\n|Caminho 2|", "\n|Caminho 3|");
+            Capitulo objeto = new Capitulo("Cap.1 A GAROTA E VAGA-LUME","\nAurora, acorda sozinha em um lugar totalmente estranho, no meio das árvores.\nEla se levanta lentamente, sentindo-se desorientada e confusa. Ao redor dela, o silêncio da floresta é interrompido apenas pelo suave sussurro do vento.\nEla a vista uma placa e decide olhar.","\n|A direita o velho monastério --> |\nAperte Enter para continuar.","Aurora segue caminho pela floresta. A paisagem do lugar não era agradevel, tinham muitas árvores secas e troncos caidos. Aurora sentia que estava sendo observada.\n|Aurora:\u001B[34m  Este sonho...Espíritos sombrios sobrevoam, mas não consigo enxergar.\nNão! Acorde, acorde.\u001B[0m|\n|Aurora:\u001B[34m Pesadelo, deixe-me acordar.\u001B[0m|\nAurora cai no chão chorando e se lamentando. Enquanto ela chorava algo brilhava entre as árvores e seguia em direção da garota caida no chão.|Vaga-lume: \u001B[34m Por que choras, criança?.\u001B[0m|\n|Aurora:\u001B[34m Quem falou isso?.\u001B[0m|\nAurora levanta o rosto e olha e direção a voz.|Vaga-lume: \u001B[34m Fui eu, como é seu nome criança?\u001B[0m|\n|Aurora:\u001B[34m Me chamo Aurora, pode me ajudar? Estou nesse lugar horrivel e quero pra casa retornar.\u001B[0m|\n|Vaga-lume:\u001B[34m   Siga-me criança. Uma moça lhe aguarda. Com cabelos longos como rio afluente, com pele de mariposa e olhos reluzentes.\u001B[0m|\n\u001B[41mO Vaga-lume vai ajudar Aurora nos momentos dificies, ele pode iluminar o caminho e cegar os inimigos. Mas seu brilho não é infinito, ele precisa comer *DESEJOS* que são frutos de uma árvore de luz.\u001B[0m \nO vaga-lume e a garota seguem o caminho.\nLogo a frente eles encontram uma árvore que tinha uma porta.\n|Vaga-lume: \u001B[34m Hum...A porta está fechada, mas eu sei onde está a chave.\nAquele tronco tem um buraco no meio, é onde a chave está.\u001B[0m|\nA menina então se aproximou do tronco e, com cuidado, inseriu a mão no buraco. Ela sentiu algo frio e metálico, e com um sorriso de triunfo, retirou a chave.\nA chave ela enseriu na porta e com um passe de mágica a porta se abriu.\nAurora avistou uma estatúa de uma bela mulher e aos pés dela estava uma espada gravada na pedra.|Vaga-lume:\u001B[34m Essa é a senhora da floresta, Aurora. É ao encontro dela que eu estou te levando. \u001B[0m|\n|Aurora: \u001B[34m Veja senhor Vaga-lume, há uma espada aos pés da senhora. \u001B[0m|\nAurora se aproximou mais da espada e viu que algo nela brilhava.|Aurora:\u001B[34m Tem uma escritura na espada: 'A luz desta espada te guiará.'\u001B[0m|\n|Vaga-lume: \u001B[34m A espada a escolheu, pegue-a.\u001B[0m|\nAperte *ENTER* para pegar a espada.\n","Quando a menina colocou sua mão sobre a espada, um brilho forte emanou.\n|Aurora: \u001B[34m Parece real, vejá só como é reluzente.\u001B[0m|\nO Vaga-lume e Aurora seguiram caminho pela floresta escura. Aurora já não tinha medo, pois o brilho do vaga-lume acalentava o seucoração.\nOs dois caminharam pela floresta até que chegaram onde o caminho se abria em três.|Aurora: \u001B[34m E agora para onde vamos?\u001B[0m|\n",
+             "\n|Caminho 1|", "\n|Caminho 2|", "\n|Caminho 3|");
             String nomeCapitulo = objeto.nomeCapitulo;
             String texto = objeto.texto1;
             String texto2 = objeto.texto2;
             String texto3 = objeto.texto3;
+            String texto4 = objeto.texto4;
 
             System.out.println(nomeCapitulo);
             System.out.println(texto);
             System.out.println(texto2);
             entradaScanner.nextLine();
+            System.out.println(texto3);
+            entradaScanner.nextLine();
+            System.out.println(texto4);
+            System.out.println("|Caminho 1|\n|Caminho 2|\n|Caminho 3|");
+            int resposta = entradaScanner.nextInt();
+            funcaoEscolhasDoCapitulo1(resposta);
            
-            System.out.println("|Aurora:\u001B[34m  Este sonho...Espíritos sombrios sobrevoam, mas não consigo enxergar.\nNão! Acorde, acorde.\u001B[0m|");
             
         }
-    public void funcao_ExibirCapi(){
-        
-        Scanner entrada = new Scanner(System.in);
-        System.out.println(nomeCapitulo);
-        funcaoExibirHP();
-
-        System.out.println("Aurora segue caminho pela floresta. A paisagem do lugar não era agradevel, tinham muitas árvores secas e troncos caidos. Aurora sentia que estava sendo observada\n ");
-        System.out.println("|Aurora:\u001B[34m Este sonho...Espíritos sombrios sobrevoam, mas não consigo enxergar.\nNão! Acorde, acorde.\u001B[0m|");
-        System.out.println("|Aurora:\u001B[34m Pesadelo, deixe-me acordar.\u001B[0m|\n");
-        System.out.println("Aurora cai no chão chorando e se lamentando. Enquanto ela chorava algo brilhava entre as árvores e seguia em direção da garota caida no chão.");
-        System.out.println("|Vaga-lume: \u001B[34m Por que choras, criança?.\u001B[0m|\n");
-        System.out.println("|Aurora:\u001B[34m Quem falou isso?.\u001B[0m|\n");
-        System.out.println("Aurora levanta o rosto e olha e direção a voz.");
-        System.out.println("|Vaga-lume: \u001B[34m Fui eu, como é seu nome criança?\u001B[0m|\n ");
-        System.out.println("|Aurora:\u001B[34m Me chamo Aurora, pode me ajudar? Estou nesse lugar horrivel e quero pra casa retornar.\u001B[0m|\n");
-        System.out.println("|Vaga-lume:\u001B[34m   Siga-me criança. Uma moça lhe aguarda. Com cabelos longos como rio afluente, com pele de mariposa e olhos reluzentes.\u001B[0m|\n");
-        System.out.println("\u001B[41mO Vaga-lume vai ajudar Aurora nos momentos dificies, ele pode iluminar o caminho e cegar os inimigos. Mas seu brilho não é infinito, ele precisa comer *DESEJOS* que são frutos de uma árvore de luz.\u001B[0m \n");
-        System.out.println("O vaga-lume e a garota seguem o caminho.\nLogo a frente eles encontram uma árvore que tinha uma porta.\n");
-        System.out.println("|Vaga-lume: \u001B[34m Hum...A porta está fechada, mas eu sei onde está a chave.\nAquele tronco tem um buraco no meio, é onde a chave está.\u001B[0m|\n");
-        System.out.println(" A menina então se aproximou do tronco e, com cuidado, inseriu a mão no buraco. Ela sentiu algo frio e metálico, e com um sorriso de triunfo, retirou a chave.\nA chave ela enseriu na porta e com um passe de mágica a porta se abriu.\nAurora avistou uma estatúa de uma bela mulher e aos pés dela estava uma espada gravada na pedra.");
-        System.out.println("|Vaga-lume:\u001B[34m Essa é a senhora da floresta, Aurora. É ao encontro dela que eu estou te levando. \u001B[0m|\n");
-        System.out.println("|Aurora: \u001B[34m Veja senhor Vaga-lume, há uma espada aos pés da senhora. \u001B[0m|\n");
-        System.out.println("Aurora se aproximou mais da espada e viu que algo nela brilhava.");
-        System.out.println("|Aurora:\u001B[34m Tem uma escritura na espada: 'A luz desta espada te guiará.'\u001B[0m|\n");
-        System.out.println("|Vaga-lume: \u001B[34m A espada a escolheu, pegue-a.\u001B[0m|\nAperte *ENTER* para pegar a espada.\n");
-        entrada.nextLine();
-        System.out.println("Quando a menina colocou sua mão sobre a espada, um brilho forte emanou.");
-        System.out.println("|Aurora: \u001B[34m Parece real, vejá só como é reluzente.\u001B[0m|\n");
-        System.out.println("O Vaga-lume e Aurora seguiram caminho pela floresta escura. Aurora já não tinha medo, pois o brilho do vaga-lume acalentava o seucoração.\nOs dois caminharam pela floresta até que chegaram onde o caminho se abria em três. ");
-        System.out.println("|Aurora: \u001B[34m E agora para onde vamos?\u001B[0m|\n");
-        System.out.println("|Caminho 1|\n|Caminho 2|\n|Caminho 3|");
-        int resposta = entrada.nextInt();
-        funcaoEscolhasDoCapitulo1(resposta);
-
-    }
-    
+    public void funcaoEscolhasDoCapitulo1(int resposta){
+        while(resposta != 1 && resposta != 2 && resposta != 3){
+             System.out.println("Por favor digite um número válido: ");
+             resposta = entrada.nextInt();
+            }
+            if (resposta == 1){
+                funcaoCaminho_A();
+            }
+            else if( resposta == 2){
+                funcaoCaminho_B();
+            }
+            else if (resposta == 3) {
+                funcaoCaminho_B();
+            }
+            }
     public void funcaoExibirHP(){ /*MÉTODO QUE VAI EXIBIR A VIDA DOS PERSONAGENS */
-        Personagens habilidadesVagalume = new Personagens();
-        Personagens habilidadesDeAurora = new Personagens();
-        
-        int hpAurora = habilidadesDeAurora.vidaMaxAurora;
-        int hpVagalume = habilidadesVagalume.energiaVagalume;
+        Personagens objPersona = new Personagens(7,14,4,14,5,0,0,0,0,0,0);
+        int hpVagalume = objPersona.energiaVagalume;
+        int hpAurora = objPersona.vidaMaxAurora;
         System.out.println("HP AURORA: "+hpAurora+"\nENERGIA DO VAGA-LUME: "+hpVagalume);
 
 
@@ -180,9 +142,14 @@ public class Capitulo {
     }
 
     public void funcaoCaminho_B(){
+        Scanner entrada = new Scanner(System.in);
+        Jogador objJogador = new Jogador();
         System.out.println("|Vaga-lume: \u001B[34m Vamos seguir para o norte. \u001B[0m|\n");
-        System.out.println("Enquanto Aurora e o Vaga-lume seguiam para o norte, a paisagem em volta deles ia se transformando, as árvores que antes estavam secas e sem folhas, agora estavam mais robustas e cheias de folhas em seus galhos. ");
-        
+        System.out.println("Na densa floresta, Aurora e o vaga-lume deslizavam entre as sombras das árvores. Seus passos eram suaves, ecoando apenas o sussurro da natureza ao redor. O vaga-lume, com sua luminescência delicada, iluminava o caminho à frente, enquanto Aurora o seguia com passos leves e curiosos.O silêncio foi interrompido por um ranger sinistro vindo das sombras. O vaga-lume, seu brilho diminuindo momentaneamente devido ao medo, percebeu a presença do Duende, uma criatura astuta e travessa que habitava os recantos mais sombrios da floresta.O Duende emergiu de entre as árvores, seu olhar faiscando com malícia enquanto avançava na direção de Aurora e do vaga-lume ");
+        funcaoExibirHP();
+        System.out.println("Para você realizar uma ação você precisara jogar o dado.\nDIGITE OK");
+        String ok = entrada.nextLine();
+        objJogador.batalhaComODuende(ok);
 
     }
 

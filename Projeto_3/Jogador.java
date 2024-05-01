@@ -62,7 +62,7 @@ public class Jogador {
                     System.out.println("\u001B Você está com pouca vida, cuidado!\u001B[0m");
                     
                 }
-                if (vidaAtual_Aurora == 0){
+                if (vidaAtual_Aurora <= 0){
                     System.out.println("\u001B[33mGAMER OVER\u001B[0m");
                 }
                 
