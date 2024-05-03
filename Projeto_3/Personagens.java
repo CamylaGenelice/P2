@@ -33,13 +33,14 @@ public class Personagens {
 
         this.energiaVagalume = 7;
         this.vidaMaxAurora = 14;
-        this.vidaMinAurora = 7;
+        this.vidaMinAurora = 4;
         this.vidaAtual_Aurora = 1;
         this.ataqueBasico = 5;
         this.vidaGolen = 10;
         this.vidaAtualGolen = 1;
         this.dano_Do_Golen = 2;
         this.pocaoAzul = 7;
+        this.pocaoVermelha = 0;
     }
     
    
@@ -81,6 +82,8 @@ public class Personagens {
      }
 }
      public  void funcao_BeberPocaoVermelha(int vidaAtual){
+          vidaMaxAurora = 14;
+          vidaMinAurora = 4;
           if (vidaAtual >= vidaMinAurora && vidaAtual < vidaMaxAurora){
                int subtrair = vidaMaxAurora - vidaAtual;
                int somar_para_complementar = vidaAtual + subtrair;
