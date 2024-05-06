@@ -50,11 +50,13 @@ public class Jogador {
             else if (resposta == jogarDado && resposta == 2 ) {
                 System.out.println("Escolha qual poção você vai utilizar:\n|1 Poção Azul||2 Poção Vermelha|");
                 int resposta_da_pocao = ler_entrada.nextInt();
-                objeto.funcao_UsarItem(resposta_da_pocao,vidaAtual_Aurora);
+                vidaAtual_Aurora = objeto.funcao_UsarItem(resposta_da_pocao,vidaAtual_Aurora);
+                objeto.funcao_AtualizarVida(vidaAtual_Aurora);
             }
             else{
-                objeto.funcao_ataquedoGolen();
-                vidaAtual_Aurora -=2;
+              
+                objeto.funcao_ataquedoGolen(vidaAtual_Aurora);
+                
                 System.out.println("\u001B[41mVocê recebeu 2 de dano \u001B[0m");
                 System.out.println("Vida atual: "+vidaAtual_Aurora);
                 
@@ -97,7 +99,7 @@ public class Jogador {
         }   
 }   
                     
-               
+             
                 
             
          
@@ -151,9 +153,9 @@ public class Jogador {
                     objeto.funcao_UsarItem(resposta_da_pocao,vidaAurora);
                 }
                 else{
-                    objeto.funcao_ataquedoGolen();
+                    objeto.funcao_ataquedoGolen(vidaAurora);
                     vidaAurora -=5;
-                    System.out.println("\u001B[41mVocê recebeu 2 de dano \u001B[0m");
+                    System.out.println("\u001B[41mVocê recebeu 5 de dano \u001B[0m");
                     System.out.println("Vida atual: "+vidaAurora);
                     
                     if (vidaAurora <= 4 && vidaAurora > 2) {

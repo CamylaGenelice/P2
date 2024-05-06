@@ -51,8 +51,8 @@ public class Personagens {
         
 
    }
-   public void funcao_ataquedoGolen(){
-        int subtrair = vidaMaxAurora - dano_Do_Golen;
+   public void funcao_ataquedoGolen(int vidaAtual){
+        int subtrair = vidaAtual - dano_Do_Golen;
         vidaAtual_Aurora = subtrair;
         /*System.out.println("\u001B[41mO SUA VIDA ATUAL: \u001B[0m "+vidaAtual_Aurora);*/
         
@@ -112,9 +112,18 @@ public class Personagens {
           
      }
      return escolha;}
-     public void funcao_AtualizarEnergia(int vidaAtual){
+     public void funcao_AtualizarVida(int vidaAtual){
           System.out.println(vidaAtual);
           }
+     public void funcao_Verificar(int vidaAtual){
+          if (vidaAtual == vidaMaxAurora){
+              
+          }
+          else if (vidaAtual != vidaMaxAurora) {
+               int subtrair = vidaAtual - dano_Do_Golen;
+               vidaAtual_Aurora = subtrair;
+          }
+     }
      }
 
 

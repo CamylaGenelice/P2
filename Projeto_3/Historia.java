@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Random;
 public class Historia {
     public static void main(String[] args) {
-        Jogador obJogador = new Jogador();
+        
         Capitulo objCapitulo = new Capitulo();
         
         /*Metodos */

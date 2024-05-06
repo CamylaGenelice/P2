@@ -150,6 +150,7 @@ public class Capitulo {
         System.out.println("Para você realizar uma ação você precisara jogar o dado.\nDIGITE OK");
         String ok = entrada.nextLine();
         objJogador.batalhaComODuende(ok);
+        entrada.close();
 
     }
 
